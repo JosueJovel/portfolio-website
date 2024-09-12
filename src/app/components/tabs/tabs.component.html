@@ -1,0 +1,65 @@
+<div class="about-me-meta-container">
+    <div class="about-me-container" [hidden]="!showAboutMe">
+        <h1 id="about-me">About Me</h1>
+    </div>
+
+    <div class="about-me-container" *ngIf="showTypewriter; else elseBlock2">
+        <div class="container">
+            <div class="tab_box">
+                <button #btn id="btn0" class="tab_btn" (click)="switchFocus(0)" [ngClass]="{'active': displayValues[0] == true}">Introduction</button>
+                <button #btn id="btn1" class="tab_btn" (click)="switchFocus(1)" [ngClass]="{'active': displayValues[1] == true}">Education</button>
+                <button #btn id="btn2" class="tab_btn" (click)="switchFocus(2)" [ngClass]="{'active': displayValues[2] == true}">Work Experience</button>
+                <button #btn id="btn3" class="tab_btn" (click)="switchFocus(3)" [ngClass]="{'active': displayValues[3] == true}">FastTrack</button>
+                <div #line class="line"></div> <!--Line div to highlight tabs-->
+            </div>
+            <div class="content_box">
+                <div class="content" *ngIf="displayValues[0]">
+                    <div>
+                        <app-introduction-typewriter *ngIf="!typedTextBooleans[0]; else completedText0"></app-introduction-typewriter>
+                        <ng-template #completedText0>
+                            <p class="about-text">I started my journey with technology as a teenager. I learned how to build PCs, which taught me the nuances
+                                of part compatibility, saving costs, and assembly. I used my newly built rigs to do what any other
+                                teenager with too much free time would: game to my heart's content.<span class="cursor-animation">|</span>
+                            </p>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="content" *ngIf="displayValues[1]">
+                    <div>
+                        <app-education-typewriter *ngIf="!typedTextBooleans[1]; else completedText1"></app-education-typewriter>
+                        <ng-template #completedText1>
+                            <p class="about-text">I was introduced to the world of software in college. The craft of programming resonated with me, which motivated 
+                                me to graduate with a Bachelor's in Computer Science and a 3.51 GPA from the University of Texas.
+                                Not only did I earn valuable knowledge about data structures and algorithms, but I got exposure to cooperating
+                                with other software engineers via group projects.<span class="cursor-animation">|</span></p>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="content" *ngIf="displayValues[2]">
+                    <div>
+                        <app-work-experience-typewriter *ngIf="!typedTextBooleans[2]; else completedText2"></app-work-experience-typewriter>
+                        <ng-template #completedText2>
+                            <p class="about-text">After graduating, I got real world software engineering experience with STEMCO, an engineering company with customers across the globe. I developed a 
+                                mobile app to program and communicate with their products, and it is currently available on the Google Play store and App store as
+                                "STEMCO Fleet Manager". As the main in house developer for most of my time there, I had to learn how to be resourceful and find answers on my own, 
+                                all while picking up new technologies like the Flutter framework.<span class="cursor-animation">|</span></p>
+                        </ng-template>
+                    </div>
+                </div>
+                <div class="content" *ngIf="displayValues[3]">
+                    <div>
+                        <app-post-work-typewriter *ngIf="!typedTextBooleans[3]; else completedText3"></app-post-work-typewriter>
+                        <ng-template #completedText3>
+                            <p class="about-text">After my time at STEMCO, I was invited to take part in the FastTrack program, an intensive 8 week course sponsored by Cook Systems, an American IT consulting firm.
+                                There, I created projects using technologies like Java, Spring Boot, Typescript, and Angular, among others. Additionally, I learned about software paradigms such as RESTful architecture
+                                and CRUD operations. I led my team through the development of several projects, and the program taught us about expectations and proper communication within an enterprise development environment.<span class="cursor-animation">|</span></p>
+                        </ng-template>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <ng-template #elseBlock2>
+        <div id="empty-space-typewriter"></div>
+    </ng-template>
+</div>

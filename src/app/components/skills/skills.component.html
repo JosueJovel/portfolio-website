@@ -1,0 +1,61 @@
+<div class="skills-meta-container">
+    <h1 id="skills-header" *ngIf="showSkillsHeader; else skillsHeaderElseBlock">Skills</h1>
+    <ng-template #skillsHeaderElseBlock>
+        <div id="empty-space"></div>
+        <div id="empty-space"></div>
+    </ng-template>
+    <div class="skills-block">
+        <h1>Languages</h1>
+        <div class="skill-container" *ngIf="showSkillsBlock1; else elseBlock1">
+            <div #skills class="skill">Java</div>
+            <div #skills class="skill">Typescript</div>
+            <div #skills class="skill">SQL</div>
+            <div #skills class="skill">HTML/CSS</div>
+            <div #skills class="skill">JavaScript</div>
+            <div #skills class="skill">TypeScript</div>
+            <div #skills class="skill">Dart</div>
+            <div #skills class="skill">C#</div>
+            <div #skills class="skill">C++</div>
+        </div>
+        <ng-template #elseBlock1>
+            <div id="empty-space"></div>
+        </ng-template>
+    </div>
+    
+    <div class="skills-block">
+        <h1>Frameworks and Libraries</h1>
+        <div class="skill-container"  *ngIf="showSkillsBlock2; else elseBlock2">
+            <div #skills class="skill skill2">Spring Boot</div>
+            <div #skills class="skill skill2">Spring JPA</div>
+            <div #skills class="skill skill2">Spring JDBC</div>
+            <div #skills class="skill skill2">Angular</div>
+            <div #skills class="skill skill2">Flutter</div>
+            <div #skills class="skill skill2">JUnit</div>
+            <div #skills class="skill skill2">jQuery</div>
+            <div #skills class="skill skill2">Jackson</div>
+            <div #skills class="skill skill2">React</div>
+        </div>
+        <ng-template #elseBlock2>
+            <div id="empty-space"></div>
+            <div id="empty-space"></div>
+        </ng-template>
+    </div>
+    
+    <div class="skills-block">
+        <h1>Other</h1>
+        <div class="skill-container"  *ngIf="showSkillsBlock3; else elseBlock3">
+            <div #skills class="skill skill3">Git</div>
+            <div #skills class="skill skill3">Maven</div>
+            <div #skills class="skill skill3">pgAdmin</div>
+            <div #skills class="skill skill3">Angular</div>
+            <div #skills class="skill skill3">Postman</div>
+            <div #skills class="skill skill3">npm</div>
+            <div #skills class="skill skill3">Node</div>
+            <div #skills class="skill skill3">Windows</div>
+            <div #skills class="skill skill3">Spanish</div>
+        </div>
+        <ng-template #elseBlock3>
+            <div id="empty-space"></div>
+        </ng-template>
+    </div>
+</div>

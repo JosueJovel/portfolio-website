@@ -1,0 +1,84 @@
+.project-card {
+    display: flex;
+    margin-left: 150px;
+    margin-bottom: 50px;
+    /*Fade In Animation*/
+    opacity: 0;
+    animation: fadeInBottom ease .75s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+h1 {
+    opacity: 0;
+    animation: fadeInBottom ease .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    margin-bottom: 100px;
+}
+
+
+.project-screencap {
+    width: 45%;
+    border: 3px solid rgb(241, 241, 241);
+    border-radius: 10px;
+    margin-right: 50px;
+}
+
+.project-description {
+    margin-right: 50px;
+}
+
+.project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+}
+
+.icon-container {
+    display: flex;
+    width: fit-content;
+    align-items: center;
+    justify-content: center;
+    border: solid 2px black;
+    border-radius: 5px;
+    cursor: pointer;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-right: 20px;
+    background: linear-gradient(135deg, #0d0d0d, #1c1c1c, #2a2a2a);
+    transition: transform 0.2s ease; /* Smooth transition for the movement */
+}
+
+.icon-container:hover {
+    transform: translate(-4px, -4px); /* Move the button slightly left and up */
+    border-color: white;
+}
+
+
+.icon {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    padding-right: 20px;
+}
+
+.icon path{
+    fill: #ffffffee;
+    transition: 0.24s;
+}
+
+.clickables {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 25px;
+}

@@ -1,0 +1,147 @@
+body {
+    background-color: #282b2e;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    animation: fadeInAnimation ease 1.5s;
+    animation-delay: 0s; 
+}
+
+.container {
+    width: 1300px;
+    height: 560px;
+    background: radial-gradient(circle at 10% 20%, rgb(8, 8, 8) 0%, rgb(48, 48, 48) 90.2%);    box-shadow: 0 2px 16px rgba(0, 0, 0, .1);
+    border-radius: 20px;
+    border: 2px solid rgb(109, 0, 0);
+
+    /*Fade in animation*/
+    opacity: 0;
+    animation: fadeInAnimation ease 1s;
+    animation-fill-mode: forwards; /*Need this property to mantain opacity (without this, opacity resets to 0 after animation end*/
+}
+
+#about-me {
+    /*Fade In Animation*/
+    opacity: 0;
+    animation: fadeInBottom ease 1s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+#empty-space-typewriter {
+    height: 564px;
+}
+
+.about-me-meta-container {
+    /*Make this the same width as the regular div and set align items start*/
+    display: flex;
+    flex-direction: column;
+    width: 1204px;
+    align-items:center;
+}
+
+@keyframes fadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+    to { opacity: 1 }
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+
+
+.tab_box {
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border-bottom: 2px solid black;
+    position: relative;
+}
+
+.tab_box .tab_btn { /*REALIZATION: Multiple like this doesnt mean multiple types, it means NESTED elements (only affects btns in boxes*/
+    font-size: 25px;
+    font-weight: 300;
+    font-family: 'JetBrains Mono', monospace;
+    color: #b6c0c9; /*Text color when button is not currently pressed*/
+    background: none;
+    border: none;
+    padding: 28px;
+    padding-bottom: 35px;
+    cursor: pointer;
+    transition: .20s;
+}
+
+.tab_box .tab_btn:hover{ /*REALIZATION: Multiple like this doesnt mean multiple types, it means NESTED elements (only affects btns in boxes*/
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+    color: #ffffff;
+}
+
+.content_box {
+    padding: 20px;
+
+}
+
+.content_box .content {
+    margin-left: 17px;
+    animation: moving .5s ease;
+}
+
+@keyframes moving {
+    from {transform: translateX(50px); opacity: 0;} /*Translation: This animation will start at said x position with 0 opacity, and move to other position with 1 opacity*/
+    to{transform: translateX(0px); opacity: 1;}
+}
+
+.content_box .content h2 {
+    margin-bottom: 10px;
+}
+
+.active {
+    color: white !important;
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.8));
+}
+
+/*Line div to highlight tabs*/
+.line {
+    position: absolute;
+    top: 96px;
+    height: 5px;
+    background-color: rgb(217, 0, 0);
+    border-radius: 10px;
+    left: 44px;
+    width: 221px;
+    transition: left 0.3s ease, width 0.3s ease; /* Transition for moving the bar between tabs */
+}
+
+.about-text {
+    font-size: 125%;
+    word-wrap: break-word;
+    line-height: 1.7;
+}
+
+.cursor-animation {
+    opacity: 1;
+    animation: blink 1.30s step-start infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+

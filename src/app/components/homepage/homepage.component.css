@@ -1,0 +1,262 @@
+.flex-container {
+    display: flex;
+    align-items: center;
+    justify-content: center; /*Tells container to center content to horizontal middle of screen*/
+    height: auto; /*Tells our containers to automatically expand to fit content*/
+    box-sizing: border-box;
+}
+
+.download-button {
+    background-color: #333;
+    border-radius: 10px;
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.07s;
+}
+
+.download-button:hover {
+    background-color: #b52a2a;
+}
+
+.download-button a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 27px;
+    text-decoration: none;
+}
+
+.profile {
+    display: flex;
+    flex-direction: column;
+    padding: 2vh;
+    align-items: center;
+    height: 600px;
+}
+
+#headshot {
+    height: 180px;
+    width: 180px;
+    margin-top: 150px;
+    border-radius: 50%;
+    border: 2px solid black;
+    box-shadow: 0 0 50px rgba(174, 174, 174, 0.7); /* Creates the glowing effect */
+    opacity: 0;
+    /*Fade In Animation*/
+    animation: fadeInAnimation ease 2s;
+    animation-delay: .5s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.bio {
+    width: 600px;
+    word-wrap: normal;
+    font-size: 125%;
+    opacity: 0; /*Set INITIAL opacity to 0*/
+
+    /*Fade In Animation*/
+    animation: fadeInAnimation ease .05s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+    animation-delay: 1s;
+}
+
+.projects {
+    flex-direction: column;
+    height: 92vh;
+}
+
+.project-description {
+    width: 500px; /* Set the width to 500 pixels */
+    word-wrap: break-word; /* Ensure words wrap naturally within the div */
+}
+
+.github-logo {
+    width: 40px;
+    height: 40px;
+}
+
+h1, h2 {
+    color: white;
+}
+
+/*Arrow animation*/
+body {
+    background: #464646;
+  }
+  #mouse-scroll {
+    style: block;
+    scale: 1.5;
+  }
+  #mouse-scroll {
+    position: relative;
+    margin: auto;
+    top: calc(100vh - 100px); /* Adjust this value to position the div */
+    margin-top: -100px; /* This should match the height of the bottom-div */
+    right: 47%;
+    -webkit-transform: translateX(-50%);
+    z-index: 499;
+
+    opacity: 0;
+    /*Fade In Animation*/
+    animation: fadeInAnimation ease 2s;
+    animation-delay: 5.3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+  }
+  #mouse-scroll span{
+    display: block;
+    width: 5px; 
+    height: 5px;
+    -ms-transform: rotate(45deg);
+      -webkit-transform: rotate(45deg);
+         transform: rotate(45deg);
+         transform: rotate(45deg);
+    border-right: 2px solid #fff; 
+    border-bottom: 2px solid #fff;
+    margin: 0 0 3px 5px;
+  }
+  #mouse-scroll .mouse {
+    height: 21px;
+    width: 14px;
+    border-radius: 10px;
+    -webkit-transform: none;
+    -ms-transform: none;
+    transform: none;
+    border: 2px solid #ffffff;
+    top: 170px;
+  }
+  #mouse-scroll .down-arrow-1 {
+    margin-top: 6px;
+  }
+  #mouse-scroll .down-arrow-1, #mouse-scroll .down-arrow-2, #mouse-scroll .down-arrow-3 {
+    -webkit-animation: mouse-scroll 1s infinite; 
+      -moz-animation: mouse-scroll 1s infinite;
+  }
+  #mouse-croll .down-arrow-1 {
+     -webkit-animation-delay: .1s; 
+     -moz-animation-delay: .1s;
+     -webkit-animation-direction: alternate;
+  }
+  #mouse-scroll .down-arrow-2 {
+    -webkit-animation-delay: .2s; 
+    -moz-animation-delay: .2s;
+    -webkit-animation-direction: alternate;
+  }
+  #mouse-scroll .down-arrow-3 {
+     -webkit-animation-delay: .3s;
+     -moz-animation-dekay: .3s;
+     -webkit-animation-direction: alternate;
+  }
+  #mouse-scroll .mouse-in {
+    height: 5px;
+    width: 2px;
+    display: block; 
+    margin: 5px auto;
+    background: #ffffff;
+    position: relative;
+  }
+  #mouse-scroll .mouse-in {
+   -webkit-animation: animated-mouse 1.2s ease infinite;
+    moz-animation: mouse-animated 1.2s ease infinite;
+  }
+
+  button {
+    background: none;
+    border: 3px solid;
+    font: inherit;
+    line-height: 1;
+    margin-top: 2em;
+    padding: .75em 1.5em;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  button {  
+    color: rgb(2, 2, 2); /*Entire button color*/
+    transition: 0.25s;
+    border-radius: 4px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 1); /* Creates the glowing effect */
+
+
+    /*Fade in animation*/
+    opacity: 0;
+    animation: fadeInAnimation ease 2s;
+    animation-delay: 5s;
+    animation-fill-mode: forwards;
+
+    
+    &:hover { 
+      border-color: rgb(255, 255, 255); /*Border color on hover*/
+      color: rgb(255, 255, 255); /*Text color on hover*/
+    }
+    
+  }
+
+  .raise:hover {
+    box-shadow: 0 0.5em 0.5em -0.4em rgb(255, 255, 255);
+    transform: translateY(-0.25em);
+
+  }
+
+  #download-text{
+    box-shadow: none !important; 
+    margin: 5px;
+    text-shadow: 0px 0 black, 0 0px black, 0px 0 black, 0 0px black; 
+    font-weight: 500;
+
+  }
+
+
+  
+  @-webkit-keyframes animated-mouse {
+    0% {
+      opacity: 1;
+      -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+      transform: translateY(0);
+    }
+    100% {
+       opacity: 0;
+      -webkit-transform: translateY(6px);
+      -ms-transform: translateY(6px);
+      transform: translateY(6px);
+    }
+  }
+  @-webkit-keyframes mouse-scroll {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: .5;
+    }
+    100% {
+      opacity: 1;
+    } 
+  }
+  @keyframes mouse-scroll {
+    0% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
