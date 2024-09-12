@@ -2,4 +2,4 @@
 
 Welcome to the repostiory for Josue Jovel's website! 
 
-Find it live here: 
+Find it live at [josuejovel.dev](josuejovel.dev)
